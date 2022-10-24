@@ -3,6 +3,7 @@ import 'package:firebase_project/pages/chat_room_page.dart';
 import 'package:firebase_project/pages/launcher_page.dart';
 import 'package:firebase_project/pages/login_page.dart';
 import 'package:firebase_project/pages/user_profile_page.dart';
+import 'package:firebase_project/provider/chat_room_provider.dart';
 import 'package:firebase_project/provider/user_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +14,7 @@ void main() async {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_)=> UserProvider()),
+      ChangeNotifierProvider(create: (_)=> ChatRoomProvider()),
     ],
     child: const MyApp(),
   ));
