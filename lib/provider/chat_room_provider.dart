@@ -12,7 +12,9 @@ class ChatRoomProvider extends ChangeNotifier {
     final messageModel = MessageModel(
       msgId: DateTime.now().millisecondsSinceEpoch,
       userUid: AuthService.user!.uid,
-      us
+      userName: AuthService.user!.displayName,
+      email: AuthService.user!.email!,
+      userImage: AuthService.user!.photoURL,
       msg: msg,
       timestamp: Timestamp.fromDate(DateTime.now()),
     );

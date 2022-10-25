@@ -29,7 +29,10 @@ class DBHelper {
       _db.collection(collectionUser).doc(uid).get();
 
   static Stream<QuerySnapshot<Map<String, dynamic>>> getAllChatRoomMessages() =>
-      _db.collection(collectionRoomMessage).snapshots();
+      _db
+          .collection(collectionRoomMessage)
+          .orderBy('msgId',descending: true)
+          .snapshots();
 
   static Future<void> updateProfile(String uid, Map<String, dynamic> map) {
     return _db.collection(collectionUser).doc(uid).update(map);
